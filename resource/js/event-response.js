@@ -1,8 +1,8 @@
-$("#grade-container").click(function() {
+$("#grade-link").click(function() {
 	getTipsList("/search/grade", {}, "grade");
 });
 
-$("#class-container").click(function() {
+$("#class-link").click(function() {
 	var grade = $("#grade-hidden").val();
 	if(grade === "") {
 		warnAlert("年级信息不能为空");
@@ -11,7 +11,7 @@ $("#class-container").click(function() {
 	}
 });
 
-$("#sname-container").click(function() {
+$("#sname-link").click(function() {
 	var classid = $("#class-hidden").val();
 	if(classid === "") {
 		warnAlert("班级信息不能为空");
@@ -47,15 +47,15 @@ function addItemToInput(id, content, name) {
 			$("#class-input").val("");
 			$("#sname-hidden").val("");
 			$("#sname-input").val("");
-			$('#class-button').attr("disabled", false);
-			$('#sname-button').attr("disabled", true);
+			$('#class-link').attr("disabled", false);
+			$('#sname-link').attr("disabled", true);
 			break;
 		case "class":
 			$("#sname-hidden").val("");
 			$("#sname-input").val("");
-			$('#sname-button').attr("disabled", false);
+			$('#sname-link').attr("disabled", false);
 			break;
 		case "sname":
-			getStudentInfo($("#sname-hidden").val(), "basic");
+			$("#serch-input").val($("#sname-hidden").val());
 	}
 }

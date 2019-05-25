@@ -9,35 +9,28 @@ html, body {
 }
 
 body {
-	background: url(../img/main_background.jpg) no-repeat;
+	background: url(../img/main_background.jpg);
+	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
 }
 
+
 ::-webkit-input-placeholder {
 	/*Webkit browsers*/
-    color: #C5D8E5;
+    color: #80909B;
 }
 :-moz-placeholder {
 	/*Mozilla Firefox 4 to 8*/
-   color: #C5D8E5;
+   color: #80909B;
 }
 ::moz-placeholder {
 	/*Mozilla Firefox 19+*/
-   color: #C5D8E5;
+   color: #80909B;
 }
 :-ms-input-placeholder {
 	/*Internet Explorer 10+*/
-    color: #C5D8E5;
-}
-
-.background-main {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	z-index: 0;
-	background-color: #000;
+    color: #80909B;
 }
 
 .hide-scroll-bars {
@@ -76,6 +69,64 @@ body {
 	display: none;
 }
 
+.top-ruler {
+	height: 20px;
+	padding: 0;
+	margin: 0;
+	background: url(../img/ruler_top.png);
+	background-position: 0 top;
+	-webkit-animation: movebackgroundrulertop .6s infinite linear;
+	-moz-animation: movebackgroundrulertop .6s infinite linear;
+	-ms-animation: movebackgroundrulertop .6s infinite linear;
+	-o-animation: movebackgroundrulertop .6s infinite linear;
+	animation: movebackgroundrulertop .6s infinite linear;
+}
+
+@-webkit-keyframes movebackgroundrulertop {
+	0% {
+		background-position: 0 top;
+	}
+	100% {
+		background-position: 32px top;
+	}
+}
+
+@-moz-keyframes movebackgroundrulertop {
+	0% {
+		background-position: 0 top;
+	}
+	100% {
+		background-position: 32px top;
+	}
+}
+
+@-ms-keyframes movebackgroundrulertop {
+	0% {
+		background-position: 0 top;
+	}
+	100% {
+		background-position: 32px top;
+	}
+}
+
+@-o-keyframes movebackgroundrulertop {
+	0% {
+		background-position: 0 top;
+	}
+	100% {
+		background-position: 32px top;
+	}
+}
+
+@keyframes movebackgroundrulertop {
+	0% {
+		background-position: 0 top;
+	}
+	100% {
+		background-position: 32px top;
+	}
+}
+
 .inputbar-container {
 	padding: 0;
 }
@@ -83,7 +134,8 @@ body {
 .top-inputbar {
 	position: relative;
 	height: 50px;
-	background-color: #131B22;
+	background-color: rgba(0, 0, 10, 0.8);
+	padding: 10px 15px;
 }
 
 .top-inputbar .top-inputer,
@@ -93,12 +145,11 @@ body {
 	width: 100%;
 	float: left;
 	padding-right: 30px;
-	background-color: #131B22;
+	background-color: rgba(0, 0, 10, 0);
 	border: none;
 	color: #C5D8E5;
 	text-align: center;
 	font-family: listregular;
-	cursor: pointer;
 }
 
 .top-inputbar .top-select-caller {
@@ -106,62 +157,171 @@ body {
 	right: 15px;
 	width: 30px;
 	height: 30px;
-	background-color: #131B22;
+	background-color: rgba(0, 0, 10, 0);
 	border: none;
-	color: #C5D8E5;
+	outline: none;
+	color: #80909B;
 	padding: 0;
 	font-size: 20px;
-	line-height: 30px;
-	transition: all 0.2s ease-in-out;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
+	line-height: 26px;
+	transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
 }
 
-.top-inputbar:hover .top-select-caller {
-	color: #BBB;
+.top-inputbar .top-link,
+.top-inputbar .top-link:hover,
+.top-inputbar .top-link:focus,
+.top-inputbar .top-link:active {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 100%;
+	height: 30px;
+	border: none;
+	outline: none;
+	background-color: rgba(0, 0, 10, 0);
+}
+
+.top-link:not([disabled]):hover + .top-select-caller {
+	color: #C5D8E5;
+}
+
+.top-inputbar .top-inputer-r {
+	height: 30px;
+	width: 100%;
+	float: left;
+	padding-right: 30px;
+	background-color: rgba(0, 0, 10, 0);
+	border: none;
+	outline: none;
+	color: #C5D8E5;
+	text-align: left;
+	font-family: listregular;
+}
+
+.top-inputbar .top-inputer-r + .top-select-caller:hover {
+	color: #C5D8E5;
 }
 
 .tips-container {
 	position: absolute;
-	z-index: 5;
 	width: 100%;
 }
 
 .tips-selecter {
-	padding: 0px;
+	padding: 30px;
 	position: relative;
+	background-color: rgba(0, 0, 10, 0.8);
 }
 
 .tips-selecter .tips-selecter-button {
 	position: absolute;
 	width: 30px;
 	height: 30px;
-	top: -30px;
-	right: -30px;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+	color: #C5D8E5;
+}
+
+.tips-selecter .tips-selecter-button:hover {
+	color: rgb(200, 0, 0);
 }
 
 .tips-selecter .tips-selecter-container {
 	width: 100%;
 	height: 100%;
+	background-color: rgba(0, 0, 10, 0);
+	color: #C5D8E5;
+	font-family: listregular;
 }
 
 .tips-selecter .tips-selecter-container .list-group {
 	margin-bottom: 0;
+	background-color: rgba(0, 0, 10, 0);
 }
 
 .tips-selecter .tips-selecter-container .list-group .list-group-item {
 	border-left: none;
 	border-right: none;
+	border-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(0, 0, 10, 0);
+	transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
 }
 
 .tips-selecter .tips-selecter-container .list-group .list-group-item:hover,
 .tips-selecter .tips-selecter-container .list-group .list-group-item:focus {
-	background-color: #AAA;
+	background-color: rgba(255, 255, 255, 0.2);
 	cursor: pointer;
 }
 
 .bottom-return {
 	width: 100%;
 	height: 30px;
+}
+
+.bottom-ruler {
+	height: 20px;
+	padding: 0;
+	margin: 0;
+	background: url(../img/ruler_bottom.png);
+	background-position: 0 bottom;
+	-webkit-animation: movebackgroundrulerbottom .6s infinite linear;
+	-moz-animation: movebackgroundrulerbottom .6s infinite linear;
+	-ms-animation: movebackgroundrulerbottom .6s infinite linear;
+	-o-animation: movebackgroundrulerbottom .6s infinite linear;
+	animation: movebackgroundrulerbottom .6s infinite linear;
+}
+
+@-webkit-keyframes movebackgroundrulerbottom {
+	0% {
+		background-position: 0 bottom;
+	}
+	100% {
+		background-position: 32px bottom;
+	}
+}
+
+@-moz-keyframes movebackgroundrulerbottom {
+	0% {
+		background-position: 0 bottom;
+	}
+	100% {
+		background-position: 32px bottom;
+	}
+}
+
+@-ms-keyframes movebackgroundrulerbottom {
+	0% {
+		background-position: 0 bottom;
+	}
+	100% {
+		background-position: 32px bottom;
+	}
+}
+
+@-o-keyframes movebackgroundrulerbottom {
+	0% {
+		background-position: 0 bottom;
+	}
+	100% {
+		background-position: 32px bottom;
+	}
+}
+
+@keyframes movebackgroundrulerbottom {
+	0% {
+		background-position: 0 bottom;
+	}
+	100% {
+		background-position: 32px bottom;
+	}
 }
