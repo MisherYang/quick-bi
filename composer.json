@@ -1,0 +1,14 @@
+{
+	"name": "compsys/wege",
+	"description": "PHP Framework",
+	"type": "Framework",
+	"keywords": [
+		"PHP", "PHP Framework"
+	],
+	"require": {
+		"php": ">= 7.0.0",
+		"filp/whoops": "*",
+		"twig/twig": "^1.0",
+		"catfan/medoo": "*"
+	}
+}

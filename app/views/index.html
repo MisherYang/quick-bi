@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+	<meta name="applicable-device" content="pc, mobile">
+	<title> {{ pageTitle }} </title>
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/index-style.css">
+</head>
+<body>
+
+<div class="background-main" style="display: none">
+	
+</div>
+
+<header class="navbar-fixed-top center-block" style="top: 20px; width: 96%">
+	<div class="col-lg-7 col-md-7 col-sm-9 col-xs-12 col-lg-offset-1 inputbar-container">
+		<div id="grade-container" class="col-xs-4 top-inputbar">
+			<input id="grade-hidden" type="hidden" disabled="false">
+			<input id="grade-input" class="center-vertical top-inputer" type="text" disabled="false" placeholder="年级">
+			<span id="grade-button" class="center-vertical top-select-caller glyphicon glyphicon-align-left"></span>
+		</div>
+		<div id="class-container" class="col-xs-4 top-inputbar">
+			<input id="class-hidden" type="hidden" disabled="false">
+			<input id="class-input" class="center-vertical top-inputer" type="text" disabled="false" placeholder="班级名称或ID">
+			<span id="class-button" class="center-vertical top-select-caller glyphicon glyphicon-align-left"></span>
+		</div>
+		<div id="sname-container" class="col-xs-4 top-inputbar">
+			<input id="sname-hidden" type="hidden" disabled="false">
+			<input id="sname-input" class="center-vertical top-inputer" type="text" disabled="false" placeholder="学号或姓名">
+			<span id="sname-button" class="center-vertical top-select-caller glyphicon glyphicon-align-left"></span>
+		</div>
+	</div>
+	<div id="serch-container" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 col-lg-offset-1 col-md-offset-2 top-inputbar">
+		<input id="serch-input" class="center-vertical top-inputer-r" type="text" name="" placeholder="搜索学号">
+		<button id="serch-button" class="center-vertical top-select-caller-r">
+			<span class="glyphicon glyphicon-search"></span>
+		</button>
+	</div>
+</header>
+
+<div class="center-vertical tips-container">
+	<div id="tips-selecter" class="col-lg-2 col-md-4 col-sm-6 col-xs-10 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-xs-offset-1 tips-selecter" style="display: none">
+		<button id="tips-selecter-button" class="tips-selecter-button"></button>
+		<div id="tips-selecter-container" class="tips-selecter-container pre-scrollable hide-scroll-bars"></div>
+	</div>
+</div>
+
+<div class="center-complete main-container">
+	
+</div>
+
+<footer class="navbar-fixed-bottom center-block" style="bottom: 40px; width: 96%">
+	<div class="col-lg-1 col-md-2 col-sm-2 col-xs-3 col-lg-offset-10 col-xs-offset-9" style="height: 50px; background-color: #FFF; display: none">
+		<button class="center-vertical bottom-return">返回</button>
+	</div>
+</footer>
+
+</body>
+
+<!-- SCRIPTS -->
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/document-event-auto.js"></script>
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/animasion.js"></script>
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/get-json-from-ajax.js"></script>
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/event-response.js"></script>
+<!-- END SCRIPTS -->
+
+</html>
