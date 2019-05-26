@@ -69,8 +69,8 @@ function AnimationControler(initMode, initInfo) {
 	}
 
 	this.moveBackground = function moveBackground(pxs) {
-		var position = $("body").css('backgroundPositionX');
-		var positionX = position.substring(0, position.length - 2);
+		var position = $("body").css('backgroundPosition');
+		var positionX = position.substring(0, position.indexOf('px'));
 		if(positionX <= -100000) {
 			$("body").css('backgroundPosition', '100000px center');
 		}
@@ -87,9 +87,9 @@ function AnimationControler(initMode, initInfo) {
 					$("#tips-content").html(displayInfo);
 					$("#tips-show-box").css('display', 'inline-block');
 				});
-				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 200);
+				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 100);
 			} else {
-				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 300, function() {
+				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 250, function() {
 					$("#tips-info-container").removeClass("tips-success-container");
 					$("#tips-content").empty();
 					$("#tips-show-box").css('display', 'none');
@@ -109,9 +109,9 @@ function AnimationControler(initMode, initInfo) {
 					$("#tips-content").html(displayInfo);
 					$("#tips-show-box").css('display', 'inline-block');
 				});
-				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 200);
+				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 100);
 			} else {
-				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 300, function() {
+				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 250, function() {
 					$("#tips-info-container").removeClass("tips-info-container");
 					$("#tips-content").empty();
 					$("#tips-show-box").css('display', 'none');
@@ -131,9 +131,9 @@ function AnimationControler(initMode, initInfo) {
 					$("#tips-content").html(displayInfo);
 					$("#tips-show-box").css('display', 'inline-block');
 				});
-				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 200);
+				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 100);
 			} else {
-				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 300, function() {
+				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 250, function() {
 					$("#tips-info-container").removeClass("tips-warning-container");
 					$("#tips-content").empty();
 					$("#tips-show-box").css('display', 'none');
@@ -153,9 +153,9 @@ function AnimationControler(initMode, initInfo) {
 					$("#tips-content").html(displayInfo);
 					$("#tips-show-box").css('display', 'inline-block');
 				});
-				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 200);
+				$("#tips-info-container").animate({'width':'100%', 'opacity':'1'}, 100);
 			} else {
-				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 300, function() {
+				$("#tips-info-container").animate({'width':'0%', 'opacity':'0'}, 250, function() {
 					$("#tips-info-container").removeClass("tips-error-container");
 					$("#tips-content").empty();
 					$("#tips-show-box").css('display', 'none');
