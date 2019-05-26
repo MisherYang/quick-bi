@@ -8,20 +8,36 @@ function getTipsList(o_url, o_data, name){
 		"success": function(data) {
 			data = jsonDecode(data);
 			if(data['error']) {
-				errorAlert(data['error_content']);
+				errorCodeTranslater(data['error']);
 			} else {
-				translateArrayToList(data, name);
-				setTipSelectDisplay(true);
+				var domList = translateArrayToList(data, name);
+				animationCtrl.display('selecter', domList);
 			}
 		},
 		"error": function(XMLHttpRequest, textStatus, errorThrown) {
-			alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);
+			animationCtrl.display('error', '服务器访问异常');
 		},
 	})
 }
 
 function getStudentInfo(studentid, mode) {
-	alert("触发了学生信息查询模块\n学号：" + studentid + "； 模式：" + mode);
+	$.ajax({
+		"cache": "false",
+		"url": "/messages/" + mode + "/studentid/" + studentid,
+		"type": "get",
+		"dataType": "json",
+		"success": function(data) {
+			data = jsonDecode(data);
+			if(data['error']) {
+				errorCodeTranslater(data['error']);
+			} else {
+				var domList = translateArrayToList(data, name);
+				// animationCtrl.display('selecter', domList);
+				animationCtrl.display('success', '查询成功');
+			}
+		},
+		"error": function(XMLHttpRequest, textStatus, errorThrown) {
+			animationCtrl.display('error', '服务器访问异常');
+		},
+	})
 }

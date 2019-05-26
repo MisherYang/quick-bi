@@ -10,9 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/z-index.css">
+	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/preloader.css">
+	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/animation.css">
 	<link rel="stylesheet" type="text/css" href="{{ resourceFolder }}/css/index-style.css">
 </head>
 <body>
+
+<div id="preloader" class="preloader">
+	<div id="loader" class="loader">加载中 ...</div>
+</div>
 
 <div class="navbar-fixed-top top-ruler index-0" style="top: 0; width: 100%"></div>
 
@@ -45,12 +51,23 @@
 	</div>
 </header>
 
-<div class="center-vertical tips-container index-5">
-	<div id="tips-selecter" class="col-lg-4 col-md-6 col-sm-8 col-xs-10 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 tips-selecter" style="display: none">
-		<span id="tips-selecter-button" class="glyphicon glyphicon-remove tips-selecter-button"></span>
-		<div id="tips-selecter-container" class="tips-selecter-container pre-scrollable hide-scroll-bars"></div>
+<!-- <div class="center-vertical tips-container index-5"> -->
+	<!-- col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 -->
+<div id="tips-selecter" class="col-lg-4 col-md-6 col-sm-8 col-xs-10 center-complete tips-selecter" style="display: none; opacity: 0">
+	<span id="tips-selecter-button" class="glyphicon glyphicon-remove tips-selecter-button"></span>
+	<div id="tips-selecter-container" class="tips-selecter-container pre-scrollable hide-scroll-bars"></div>
+</div>
+
+<div onselectstart="return false" oncontextmenu=self.event.returnValue=false id="tips-show-box" class="col-lg-4 col-md-6 col-sm-8 col-xs-10 center-complete tips-show-box" style="display: none">
+	<div id="tips-info-container" class=" center-block tips-show" style="width: 100%">
+		<div style="width: 100%; height: 100%; max-height: 116px; overflow: hidden">
+			<div class="tip-top-ruler index-0" style="position: absolute; left: 0; top: 0; width: 100%"></div>
+			<span id="tips-content"></span>
+			<div class="tip-bottom-ruler index-0" style="position: absolute; left: 0; bottom: 0; width: 100%"></div>
+		</div>
 	</div>
 </div>
+<!-- </div> -->
 
 <div class="center-complete main-container">
 	
@@ -64,13 +81,17 @@
 
 <div class="navbar-fixed-bottom bottom-ruler index-0" style="bottom: 0; width: 100%"></div>
 
+<!-- AUDIOS -->
+<!-- <audio src="{{ resourceFolder }}/audio/shakeRuning.wav" id="audioHint">您的浏览器不支持 audio</audio> -->
+<!-- END AUDIOS -->
+
 </body>
 
 <!-- SCRIPTS -->
 <script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/document-event-auto.js"></script>
 <script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/bootstrap.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/animasion.js"></script>
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/animation.js"></script>
+<script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/document-event-auto.js"></script>
 <script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/get-json-from-ajax.js"></script>
 <script type="text/javascript" charset="utf-8" src="{{ resourceFolder }}/js/event-response.js"></script>
 <!-- END SCRIPTS -->

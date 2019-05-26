@@ -5,13 +5,13 @@ html, body {
 	height: 100%;
 	overflow: hidden;
 	position: relative;
-	background: #000;
+	background-color: #000;
 }
 
 body {
 	background: url(../img/main_background.jpg);
 	background-attachment: fixed;
-	background-position: center;
+	background-position: 100000px center;
 	background-size: cover;
 }
 
@@ -82,49 +82,12 @@ body {
 	animation: movebackgroundrulertop .6s infinite linear;
 }
 
-@-webkit-keyframes movebackgroundrulertop {
-	0% {
-		background-position: 0 top;
-	}
-	100% {
-		background-position: 32px top;
-	}
-}
-
-@-moz-keyframes movebackgroundrulertop {
-	0% {
-		background-position: 0 top;
-	}
-	100% {
-		background-position: 32px top;
-	}
-}
-
-@-ms-keyframes movebackgroundrulertop {
-	0% {
-		background-position: 0 top;
-	}
-	100% {
-		background-position: 32px top;
-	}
-}
-
-@-o-keyframes movebackgroundrulertop {
-	0% {
-		background-position: 0 top;
-	}
-	100% {
-		background-position: 32px top;
-	}
-}
-
-@keyframes movebackgroundrulertop {
-	0% {
-		background-position: 0 top;
-	}
-	100% {
-		background-position: 32px top;
-	}
+.tip-top-ruler {
+	height: 20px;
+	padding: 0;
+	margin: 0;
+	background: url(../img/ruler_top.png);
+	background-position: 0 top;
 }
 
 .inputbar-container {
@@ -230,7 +193,7 @@ body {
 }
 
 .tips-selecter .tips-selecter-button:hover {
-	color: rgb(200, 0, 0);
+	color: rgba(212, 57, 53, 0.6);
 }
 
 .tips-selecter .tips-selecter-container {
@@ -263,6 +226,40 @@ body {
 	cursor: pointer;
 }
 
+.tips-show-box {
+	padding: 0;
+	position: absolute;
+	color: #FFF;
+	font-size: 40px;
+	font-family: listregular;
+	text-align: center;
+}
+
+.tips-show {
+	position: relative;
+	padding: 20px 0;
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	cursor: pointer;
+	max-height: 156px;
+}
+
+.tips-success-container {
+	background: /* rgba(81, 172, 73, 0.5) */rgba(47, 98, 42, 0.6);
+}
+
+.tips-info-container {
+	background: /* rgba(91, 184, 219, 0.5) */rgba(47, 94, 112, 0.6);
+}
+
+.tips-warning-container {
+	background: /* rgba(237, 158, 47, 0.5) */rgba(122, 81, 24, 0.6);
+}
+
+.tips-error-container {
+	background: /* rgba(212, 57, 53, 0.5) */rgba(113, 30, 28, 0.6);
+}
+
 .bottom-return {
 	width: 100%;
 	height: 30px;
@@ -281,47 +278,10 @@ body {
 	animation: movebackgroundrulerbottom .6s infinite linear;
 }
 
-@-webkit-keyframes movebackgroundrulerbottom {
-	0% {
-		background-position: 0 bottom;
-	}
-	100% {
-		background-position: 32px bottom;
-	}
-}
-
-@-moz-keyframes movebackgroundrulerbottom {
-	0% {
-		background-position: 0 bottom;
-	}
-	100% {
-		background-position: 32px bottom;
-	}
-}
-
-@-ms-keyframes movebackgroundrulerbottom {
-	0% {
-		background-position: 0 bottom;
-	}
-	100% {
-		background-position: 32px bottom;
-	}
-}
-
-@-o-keyframes movebackgroundrulerbottom {
-	0% {
-		background-position: 0 bottom;
-	}
-	100% {
-		background-position: 32px bottom;
-	}
-}
-
-@keyframes movebackgroundrulerbottom {
-	0% {
-		background-position: 0 bottom;
-	}
-	100% {
-		background-position: 32px bottom;
-	}
+.tip-bottom-ruler {
+	height: 20px;
+	padding: 0;
+	margin: 0;
+	background: url(../img/ruler_bottom.png);
+	background-position: 0 bottom;
 }

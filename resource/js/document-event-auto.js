@@ -3,6 +3,13 @@ $(document).ready(function() {
 	console.log("预祝比赛圆满成功！");
 });
 
+var backgroundMotion;
+$(document).ready(function() {
+	backgroundMotion = setInterval(function() {
+		animationCtrl.moveBackground(1);
+	}, 50);
+});
+
 $(document).ready(function() {
 	$("#tips-selecter-container").css("max-height", Math.floor(($(window).height() - 200) * 0.8));
 });
@@ -10,3 +17,10 @@ $(document).ready(function() {
 $(window).resize(function() {
 	$("#tips-selecter-container").css("max-height", Math.floor(($(window).height() - 200) * 0.8));
 });
+
+window.onload = function() {
+	animationCtrl.display('welcome');
+	$("#loader").html("加载完成");
+	$("#preloader").delay(300);
+	$("#preloader").fadeOut(300);
+};

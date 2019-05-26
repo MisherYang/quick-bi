@@ -5,7 +5,7 @@ $("#grade-link").click(function() {
 $("#class-link").click(function() {
 	var grade = $("#grade-hidden").val();
 	if(grade === "") {
-		warnAlert("年级信息不能为空");
+		animationCtrl.display('warning', '年级信息不能为空');
 	} else {
 		getTipsList("/search/class", {"grade": grade}, "class");
 	}
@@ -14,7 +14,7 @@ $("#class-link").click(function() {
 $("#sname-link").click(function() {
 	var classid = $("#class-hidden").val();
 	if(classid === "") {
-		warnAlert("班级信息不能为空");
+		animationCtrl.display('warning', '班级信息不能为空');
 	} else {
 		getTipsList("/search/student", {"classid": classid}, "sname");
 	}
@@ -23,14 +23,31 @@ $("#sname-link").click(function() {
 $("#serch-button").click(function() {
 	var studentid = $("#serch-input").val();
 	if(studentid === "") {
-		warnAlert("学号不能为空");
+		animationCtrl.display('warning', '学号不能为空');
 	} else {
+		animationCtrl.display('information', '查询中...');
 		getStudentInfo(studentid, "basic");
 	}
 });
 
+$("#serch-input").keydown(function(e) {
+	if(e.keyCode === 13) {
+		var studentid = $("#serch-input").val();
+		if(studentid === "") {
+			animationCtrl.display('warning', '学号不能为空');
+		} else {
+			animationCtrl.display('information', '查询中...');
+			getStudentInfo(studentid, "basic");
+		}
+	}
+});
+
 $("#tips-selecter-button").click(function() {
-	setTipSelectDisplay(false);
+	animationCtrl.display('default');
+});
+
+$("#tips-info-container").click(function() {
+	animationCtrl.display('default');
 });
 
 function addItemToInput(id, content, name) {
@@ -38,7 +55,7 @@ function addItemToInput(id, content, name) {
 	var hiddenContent = name === "grade" ? content : id;
 	$("#" + name + "-hidden").val(hiddenContent);
 	$("#" + name + "-input").val(inputContent);
-	setTipSelectDisplay(false);
+	animationCtrl.display('default');
 	// 模拟onChange事件
 	// 这块儿有个坑：$('#class-button').attr("disabled", false);是设置可以操作，若为true则不能操作
 	switch(name) {
