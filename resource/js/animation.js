@@ -74,7 +74,8 @@ function AnimationControler(initMode, initInfo) {
 		if(positionX <= -100000) {
 			$("body").css('backgroundPosition', '100000px center');
 		}
-		$("body").animate({'backgroundPosition':'-=' + pxs}, 1);
+		$("body").stop(true, false);
+		$("body").animate({'backgroundPosition':'-=' + pxs}, 80);
 	}
 	
 	function setSuccessAlertDisplay(display, o_display, displayInfo) {

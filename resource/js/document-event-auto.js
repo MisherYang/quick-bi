@@ -3,6 +3,12 @@ $(document).ready(function() {
 	console.log("预祝比赛圆满成功！");
 });
 
+$(document).ready(function() {
+	setTimeout(function() {
+		$("#unsmooth").fadeIn(100);
+	}, 3000);
+});
+
 var backgroundMotion;
 $(document).ready(function() {
 	backgroundMotion = setInterval(function() {
