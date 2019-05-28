@@ -12,7 +12,6 @@ body {
 	background: url(../img/main_background.jpg);
 	background-attachment: fixed;
 	background-position: 100000px center;
-	background-position: center;
 	background-size: cover;
 }
 
@@ -246,19 +245,19 @@ body {
 }
 
 .tips-success-container {
-	background: /* rgba(81, 172, 73, 0.5) */rgba(47, 98, 42, 0.6);
+	background: rgba(47, 98, 42, 0.6);
 }
 
 .tips-info-container {
-	background: /* rgba(91, 184, 219, 0.5) */rgba(47, 94, 112, 0.6);
+	background: rgba(47, 94, 112, 0.6);
 }
 
 .tips-warning-container {
-	background: /* rgba(237, 158, 47, 0.5) */rgba(122, 81, 24, 0.6);
+	background: rgba(122, 81, 24, 0.6);
 }
 
 .tips-error-container {
-	background: /* rgba(212, 57, 53, 0.5) */rgba(113, 30, 28, 0.6);
+	background: rgba(113, 30, 28, 0.6);
 }
 
 .main-box {
