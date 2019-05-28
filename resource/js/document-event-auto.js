@@ -18,15 +18,21 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$("#tips-selecter-container").css("max-height", Math.floor(($(window).height() - 200) * 0.8));
+	if($("#footer").css('display') != 'none') {
+		$("#footer").height($(window).height() - 75 - $("#header").height());
+	}
 });
 
 $(window).resize(function() {
 	$("#tips-selecter-container").css("max-height", Math.floor(($(window).height() - 200) * 0.8));
+	if($("#footer").css('display') != 'none') {
+		$("#footer").height($(window).height() - 75 - $("#header").height());
+	}
 });
 
 window.onload = function() {
-	animationCtrl.display('welcome');
 	$("#loader").html("加载完成");
 	$("#preloader").delay(300);
 	$("#preloader").fadeOut(300);
+	animationCtrl.display('welcome');
 };

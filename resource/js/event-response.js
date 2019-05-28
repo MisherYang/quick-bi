@@ -26,7 +26,7 @@ $("#serch-button").click(function() {
 		animationCtrl.display('warning', '学号不能为空');
 	} else {
 		animationCtrl.display('information', '查询中...');
-		getStudentInfo(studentid, "basic");
+		studentInfoAjaxCtrl.getStudentInfo(studentid, "basic", true);
 	}
 });
 
@@ -37,7 +37,7 @@ $("#serch-input").keydown(function(e) {
 			animationCtrl.display('warning', '学号不能为空');
 		} else {
 			animationCtrl.display('information', '查询中...');
-			getStudentInfo(studentid, "basic");
+			studentInfoAjaxCtrl.getStudentInfo(studentid, "basic", true);
 		}
 	}
 });
@@ -48,6 +48,26 @@ $("#tips-selecter-button").click(function() {
 
 $("#tips-info-container").click(function() {
 	animationCtrl.display('default');
+});
+
+$("#student-info-remove").click(function() {
+	animationCtrl.display('default');
+});
+
+$("#carousel-btn-01").click(function() {
+	studentInfoAjaxCtrl.getStudentInfo($("#serch-hidden").val(), 'basic');
+});
+
+$("#carousel-btn-10").click(function() {
+	studentInfoAjaxCtrl.getStudentInfo($("#serch-hidden").val(), 'identical');
+});
+
+$("#carousel-btn-12").click(function() {
+	studentInfoAjaxCtrl.getStudentInfo($("#serch-hidden").val(), 'schooling');
+});
+
+$("#carousel-btn-21").click(function() {
+	studentInfoAjaxCtrl.getStudentInfo($("#serch-hidden").val(), 'basic');
 });
 
 function addItemToInput(id, content, name) {

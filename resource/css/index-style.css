@@ -12,6 +12,7 @@ body {
 	background: url(../img/main_background.jpg);
 	background-attachment: fixed;
 	background-position: 100000px center;
+	background-position: center;
 	background-size: cover;
 }
 
@@ -258,6 +259,67 @@ body {
 
 .tips-error-container {
 	background: /* rgba(212, 57, 53, 0.5) */rgba(113, 30, 28, 0.6);
+}
+
+.main-box {
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+.main-container {
+	position: relative;
+	overflow: hidden;
+	background-color: rgba(0, 0, 10, 0.8);
+	height: 100%;
+}
+
+.student-info-remove {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+	color: #C5D8E5;
+}
+
+.student-info-remove:hover {
+	color: rgba(212, 57, 53, 0.6);
+}
+
+.main-container .carousel .carousel-inner .item {
+	font-size: 16px;
+	height: 100%;
+	padding: 20px 40px;
+	font-family: listregular;
+	line-height: 30px;
+	color: #C5D8E5;
+}
+
+.main-container .carousel .carousel-inner .item h4 {
+	text-align: center;
+	font-size: 18px;
+}
+
+.student-info-btn,
+.student-info-btn:hover {
+	border: 1px solid #C5D8E5;
+	font-family: listregular;
+	color: #C5D8E5;
+	outline: none;
+	background-color: rgba(0, 0, 10, 0);
+	margin: 10px 0;
+	height: 40px;
+	line-height: 28px;
+}
+
+.student-info-btn:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
 }
 
 .bottom-return {
