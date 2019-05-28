@@ -50,7 +50,9 @@ function StudentInfoAjaxControler() {
 			"success": function(data) {
 				data = jsonDecode(data);
 				if(data['error']) {
-					errorCodeTranslater(data['error']);
+					if(mode === 'basic') {
+						errorCodeTranslater(data['error']);
+					}
 				} else {
 					var domList = translateArrayToParagraph(data, mode);
 					studentInfoAjaxCtrl.studentInfo[mode] = domList;
