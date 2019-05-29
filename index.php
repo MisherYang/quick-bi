@@ -11,7 +11,7 @@ define('CORE', WEGE.'/core');
 define('APP', WEGE.'/app');
 define('RESOURCE', '/resource');
 define('MODULE', 'app');
-define('DEBUG', false);
+define('DEBUG', true);
 
 include "vendor/autoload.php";
 

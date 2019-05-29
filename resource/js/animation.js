@@ -239,6 +239,7 @@ function AnimationControler(initMode, initInfo) {
 function StudentInfoControler() {
 	// 创建打字机效果控制器的构造器
 	this.display = 1;
+	this.timer = null;
 
 	this.changeShowMode = function(o_display, displayInfo) {
 		clearParagraphBox(this.addressQuery(this.display));
@@ -271,13 +272,14 @@ function StudentInfoControler() {
 		var currentId = "#student-info-" + o_address;
 		var currentHtml = "";
 		var index = 0;
-		var timer = setInterval(function() {
+		clearInterval(this.timer);
+		this.timer = setInterval(function() {
 			currentHtml = $(currentId).html();
 			$(currentId).html(currentHtml.substring(0, currentHtml.length - 1) + array[index] + "_");
 			$(currentId).parent('.pre-scrollable')[0].scrollTop = $(currentId).parent('.pre-scrollable')[0].scrollHeight;
 			index++;
 			if(index == array.length) {
-				clearInterval(timer);
+				clearInterval(this.timer);
 				setTimeout(function() {
 					$(currentId).nextAll("button").css("display", "block");
 					$(currentId).parent('.pre-scrollable')[0].scrollTop = $(currentId).parent('.pre-scrollable')[0].scrollHeight;

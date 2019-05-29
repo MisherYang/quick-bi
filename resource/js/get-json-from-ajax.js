@@ -26,9 +26,15 @@ function StudentInfoAjaxControler() {
 	this.studentInfo['basic'] = "";
 	this.studentInfo['identical'] = "";
 	this.studentInfo['schooling'] = "";
-	console.log(this.studentInfo);
+
+	this.lastTime = 0;
 
 	this.getStudentInfo = function(studentid, mode, flush) {
+		var currentTime = (new Date()).valueOf();
+		var difference = currentTime - this.lastTime;
+		this.lastTime = currentTime;
+		if(difference < 1000) { return; }
+
 		if(studentid == this.studentid && this.studentid !== null && flush != true) {
 			var domList = this.studentInfo[mode];
 			studentInfoCtrl.changeShowMode(studentInfoCtrl.addressQuery(mode), domList);
@@ -42,6 +48,9 @@ function StudentInfoAjaxControler() {
 	}
 
 	function getInformation(studentid, mode) {
+		if(mode === 'basic') {
+			animationCtrl.display('information', '查询中...');
+		}
 		$.ajax({
 			"cache": "false",
 			"url": "/messages/" + mode + "/studentid/" + studentid,

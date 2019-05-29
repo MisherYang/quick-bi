@@ -25,7 +25,6 @@ $("#serch-button").click(function() {
 	if(studentid === "") {
 		animationCtrl.display('warning', '学号不能为空');
 	} else {
-		animationCtrl.display('information', '查询中...');
 		studentInfoAjaxCtrl.getStudentInfo(studentid, "basic", true);
 	}
 });
@@ -36,7 +35,6 @@ $("#serch-input").keydown(function(e) {
 		if(studentid === "") {
 			animationCtrl.display('warning', '学号不能为空');
 		} else {
-			animationCtrl.display('information', '查询中...');
 			studentInfoAjaxCtrl.getStudentInfo(studentid, "basic", true);
 		}
 	}
