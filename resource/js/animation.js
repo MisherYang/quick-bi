@@ -272,6 +272,7 @@ function StudentInfoControler() {
 		var currentId = "#student-info-" + o_address;
 		var currentHtml = "";
 		var index = 0;
+		// 先清除显示动画以免产生乱码
 		clearInterval(this.timer);
 		this.timer = setInterval(function() {
 			currentHtml = $(currentId).html();

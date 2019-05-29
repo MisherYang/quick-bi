@@ -33,13 +33,16 @@ function StudentInfoAjaxControler() {
 		var currentTime = (new Date()).valueOf();
 		var difference = currentTime - this.lastTime;
 		this.lastTime = currentTime;
-		if(difference < 1000) { return; }
-
+		if(difference < 800) {
+			animationCtrl.display('warning', '请勿重复点击');
+			return;
+		}
 		if(studentid == this.studentid && this.studentid !== null && flush != true) {
 			var domList = this.studentInfo[mode];
 			studentInfoCtrl.changeShowMode(studentInfoCtrl.addressQuery(mode), domList);
 		} else {
 			$("#serch-hidden").val(studentid);
+			animationCtrl.display('information', '查询中...');
 			getInformation(studentid, 'basic');
 			getInformation(studentid, 'identical');
 			getInformation(studentid, 'schooling');
@@ -48,9 +51,6 @@ function StudentInfoAjaxControler() {
 	}
 
 	function getInformation(studentid, mode) {
-		if(mode === 'basic') {
-			animationCtrl.display('information', '查询中...');
-		}
 		$.ajax({
 			"cache": "false",
 			"url": "/messages/" + mode + "/studentid/" + studentid,
@@ -69,7 +69,6 @@ function StudentInfoAjaxControler() {
 						animationCtrl.display('success', '查询成功');
 						setTimeout(function() {
 							animationCtrl.display('messages', data['student_sex']);
-							console.log(data['student_sex']);
 							studentInfoCtrl.changeShowMode(studentInfoCtrl.addressQuery(mode), domList);
 						}, 1000);
 					}

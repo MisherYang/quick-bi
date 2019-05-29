@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	setTimeout(function() {
-		$("#unsmooth").fadeIn(100);
+		$("#unsmooth").fadeIn(300);
 	}, 3000);
 });
 
@@ -31,7 +31,8 @@ $(window).resize(function() {
 });
 
 window.onload = function() {
-	$("#loader").html("加载完成");
+	$("#unsmooth").fadeOut(100);
+	$("#loader").html("正在进入 ...");
 	$("#preloader").delay(300);
 	$("#preloader").fadeOut(300);
 	animationCtrl.display('welcome');
